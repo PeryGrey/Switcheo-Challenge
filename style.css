@@ -1,0 +1,260 @@
+/* CSS vars */
+:root {
+  --dark_blue: #193b4d;
+  --neon: #e2fca4;
+  --white: #f4f9fd;
+  --grey: #bbb;
+  --error: #fa5252;
+
+  --field-padding: 12px;
+}
+
+/* GENERAL STYLING */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  background-color: #304f5f;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--white);
+}
+
+.container {
+  max-width: 70rem;
+  padding: 0 8rem;
+  margin: 0 auto;
+}
+
+/* FORM STYLING */
+
+.card {
+  background-color: var(--dark_blue);
+  border-radius: 0.3rem;
+
+  margin-top: 10rem;
+  padding: 2.5rem 3rem;
+
+  transition: all 0.2s;
+
+  -moz-box-shadow: 0 0 1.4rem #193b4d;
+  -webkit-box-shadow: 0 0 1.4rem #193b4d;
+  box-shadow: 0 0 1.4rem #193b4d;
+}
+
+.create-form {
+  display: grid;
+  grid-gap: 0.5rem 3rem;
+}
+
+.create-form > div {
+  column-span: 1/-1;
+}
+
+/* IN-FORM ELEMENTS STYLING */
+
+.name {
+  font-size: 3rem;
+  padding-bottom: 2rem;
+}
+
+p {
+  font-size: 1.6rem;
+  font-weight: 300;
+  padding-bottom: 3rem;
+}
+
+p > span {
+  font-weight: 800;
+}
+
+/* BOTTOM BTN STYLING */
+
+.btn-div {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: -1rem;
+  padding-top: 1.4rem;
+}
+
+.btn {
+  background-color: var(--dark_blue);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  margin-left: 1rem;
+
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: 600;
+
+  transition: all 0.15s;
+
+  cursor: pointer;
+}
+
+.send {
+  color: var(--neon);
+}
+
+.send:active,
+.send:hover {
+  background-color: #e2fca430;
+}
+
+.cancel {
+  color: var(--white);
+}
+
+.cancel:active,
+.cancel:hover {
+  background-color: #f4f9fd30;
+}
+
+label {
+  display: block;
+  padding-bottom: 1rem;
+}
+
+.amount-row {
+  display: grid;
+  grid-template-columns: auto 6rem;
+  gap: 0 1rem;
+}
+
+.small-btn {
+  margin: 0;
+  border: var(--white) 0.1rem solid;
+  justify-self: right;
+  align-self: center;
+  color: var(--white);
+  width: fit-content;
+  height: fit-content;
+}
+
+.otp-row {
+  display: grid;
+  grid-template-columns: auto 10.7rem;
+  gap: 1rem;
+}
+
+.small-btn:active,
+.small-btn:hover {
+  background-color: #e2fca430;
+}
+
+/* TEXTBOX STYLING */
+
+.custom-field {
+  position: relative;
+  font-size: 1.4rem;
+  border-top: 20px solid transparent;
+  margin-bottom: 5px;
+}
+
+.custom-field input {
+  border: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: var(--white);
+  font-size: 1.8rem;
+
+  padding-bottom: 0.5rem;
+  border-radius: 3px;
+  width: 100%;
+  outline: none;
+}
+
+.custom-field .placeholder {
+  position: absolute;
+  left: 0;
+  font-size: 1.6rem;
+
+  width: calc(100% - (var(--field-padding) * 2));
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  top: 1rem;
+  line-height: 100%;
+  transform: translateY(-50%);
+  color: var(--grey);
+  transition: top 0.3s ease, color 0.3s ease, font-size 0.3s ease;
+}
+
+.custom-field input.dirty + .placeholder,
+.custom-field input:focus + .placeholder,
+.custom-field input:not(:placeholder-shown) + .placeholder {
+  top: -1.5rem;
+  font-size: 1.2rem;
+  color: var(--white);
+  transition: ease 0.3s;
+}
+
+.custom-field.two input.dirty,
+.custom-field.two input:not(:placeholder-shown),
+.custom-field.two input:focus {
+  border-color: var(--dark_blue);
+  transition-delay: 0.1s;
+}
+
+.custom-field.two input:focus + .placeholder {
+  top: -1.5rem;
+  font-size: 1.2rem;
+  color: var(--neon);
+  width: auto;
+}
+
+.custom-field.two input {
+  border-radius: 0;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  background: linear-gradient(90deg, var(--neon), var(--neon)) left bottom/0
+      0.15rem no-repeat,
+    linear-gradient(90deg, var(--grey), var(--grey)) left bottom/100% 0.15rem
+      no-repeat;
+  transition: background-size 0.3s ease;
+}
+
+.custom-field.two input.dirty,
+.custom-field.two input:focus {
+  background-size: 100% 0.15rem, 100% 0.15rem, 100%;
+}
+
+/* ERROR MESSAGE STYLING */
+
+.error-message {
+  color: var(--error) !important;
+}
+
+.error-underline {
+  background: linear-gradient(90deg, var(--error), var(--error)) left bottom/0
+      0.15rem no-repeat,
+    linear-gradient(90deg, var(--error), var(--error)) left bottom/100% 0.15rem
+      no-repeat !important;
+}
+
+/* MAX ETH LINE STYLING */
+
+.max-amt-text {
+  font-size: 1.2rem;
+  margin-top: -1rem;
+  padding-bottom: 1.4rem;
+  grid-column: 1/-1;
+}
+
+.max-ether {
+  font-weight: 400;
+}

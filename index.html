@@ -1,0 +1,106 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,
+    maximum-scale=1.0, user-scalable=0, height=device-height"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- css files import -->
+    <link rel="stylesheet" href="/problem2/style.css" />
+
+    <!-- tab header stuff -->
+    <title>Send Eth</title>
+    <link
+      rel="shortcut icon"
+      href="https://www.wavescan.sg/wp-content/themes/betheme/images/favicon.ico"
+    />
+
+    <script defer src="/problem2/script.js"></script>
+  </head>
+
+  <body>
+    <!-- nav bar just WaveScan icon -->
+    <nav class="nav-bar container">
+      <header class="header"></header>
+    </nav>
+
+    <div class="container">
+      <!-- scetion form for new project  -->
+      <div class="card">
+        <h2 class="name">Send Ethereum</h2>
+        <p>
+          Please ensure that a <span>valid Ethereum address</span> is entered
+          below.
+        </p>
+        <form class="create-form" name="data-collection" netlify>
+          <div>
+            <label class="custom-field two" for="eth-addr">
+              <input
+                id="eth-addr"
+                type="text"
+                placeholder=" "
+                name="eth-addr"
+              />
+              <span class="placeholder addr-placeholder">ETH address</span>
+            </label>
+            <!-- project name error message hidden -->
+            <!-- <p id="em0" class="error-message hide">
+              Project Names must be atleast 3 characters long.
+            </p> -->
+          </div>
+          <div class="amount-row">
+            <label class="custom-field two" for="eth-amt">
+              <input
+                id="eth-amt"
+                type="number"
+                placeholder=" "
+                name="eth-amt"
+              />
+              <span class="placeholder amt-placeholder">Amount in ETH</span>
+            </label>
+            <button id="max" class="btn small-btn">MAX</button>
+            <div class="max-amt-text">
+              Max ETH: <span class="max-ether"></span>
+            </div>
+          </div>
+          <div>
+            <div class="otp-row">
+              <label class="custom-field two" for="otp">
+                <input id="otp" type="number" placeholder=" " name="otp" />
+                <span class="placeholder otp-placeholder">OTP Code</span>
+              </label>
+              <button id="otp-btn" class="btn small-btn">Send otp</button>
+            </div>
+          </div>
+        </form>
+        <div class="btn-div">
+          <button class="btn cancel">Cancel</button>
+          <button class="btn send">Send</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- icon image import -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <!-- js file import -->
+  </body>
+</html>
