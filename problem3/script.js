@@ -24,7 +24,7 @@ const answer = function () {
     // get data as json object from endpoint
     .then(response => {
       if (!response.ok)
-        throw new Error(`${errorMsg} (${response.status})`)
+        throw new Error(`(${response.status})`)
       return response.json()
     })
 
