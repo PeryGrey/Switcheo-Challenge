@@ -2,7 +2,9 @@
 :root {
   --dark_blue: #193b4d;
   --neon: #e2fca4;
+  --trans-neon: #e2fca445;
   --white: #f4f9fd;
+  --trans-white: #f4f9fd30;
   --grey: #bbb;
   --error: #fa5252;
 
@@ -27,8 +29,17 @@ body {
   font-family: 'Inter', sans-serif;
 
   font-size: 2rem;
-  line-height: 1;
+  line-height: 1.2;
   color: var(--white);
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  background: var(--trans-neon);
+}
+
+::selection {
+  background: var(--trans-neon);
 }
 
 .container {
@@ -48,9 +59,9 @@ body {
 
   transition: all 0.2s;
 
-  -moz-box-shadow: 0 0 1.4rem #193b4d;
-  -webkit-box-shadow: 0 0 1.4rem #193b4d;
-  box-shadow: 0 0 1.4rem #193b4d;
+  -moz-box-shadow: 0 0 1.4rem #193b4dcc;
+  -webkit-box-shadow: 0 0 1.4rem #193b4dcc;
+  box-shadow: 0 0 1.4rem #193b4dcc;
 }
 
 .create-form {
@@ -110,7 +121,7 @@ p > span {
 
 .send:active,
 .send:hover {
-  background-color: #e2fca430;
+  background-color: var(--trans-neon);
 }
 
 .cancel {
@@ -119,7 +130,7 @@ p > span {
 
 .cancel:active,
 .cancel:hover {
-  background-color: #f4f9fd30;
+  background-color: var(--trans-white);
 }
 
 label {
@@ -151,7 +162,7 @@ label {
 
 .small-btn:active,
 .small-btn:hover {
-  background-color: #e2fca430;
+  background-color: var(--trans-white);
 }
 
 /* TEXTBOX STYLING */

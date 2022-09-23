@@ -28,7 +28,7 @@ async function getWallets(account: string) {
       `https://api.bscscan.com/api?module=account&action=tokenbalance&contractaddress=${contractAddress}&address=${account}&tag=latest&apikey=${apiKey}`
     );
 
-    // desire output display
+    // display desired output values
     await console.log(account, +data.result / 10 ** 8);
   } catch (error) {
     if (axios.isAxiosError(error)) {

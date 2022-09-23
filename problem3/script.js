@@ -1,5 +1,4 @@
 // DataSource utility class to retrieve data from data endpoint: https://static.ngnrs.io/test/prices
-
 class DataSourceUtil {
 
   constructor(price) {
@@ -45,11 +44,14 @@ const answer = function () {
         // printing required output for answer
         console.log(`Mid price for ${statement[i].pair} is ${statement[i].mid()} ${statement[i].quote()}.`);
         i++;
+
       })
     })
     .catch(error => {
       console.err(error);
     });
+
 }
 
+// output displayed on index.html under console
 answer()
